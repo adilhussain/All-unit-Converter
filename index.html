@@ -16,7 +16,8 @@
    <div data-role="header" data-theme="c">
 		<a href="index.html" data-icon="back">back</a>
 		<h1>All Unit Converter</h1>
-	<a href="index.html" data-icon="gear"></a>
+	<a href="#optionsPanel" data-icon="gear" class="ui-btn-right">Options</a>
+	<span class="ui-title" />
     
    <div data-role="navbar">
      <ul>
@@ -67,9 +68,28 @@
  
  </table>
  
+ <div data-role="panel"  data-theme="c" id="optionsPanel" data-position="right" data-display="overlay" >
+ <!--<label><input type="checkbox" name="checkbox-0">I agree</label>
+ <label><input type="radio" name="radio-0">Option 1</label>
+ <label><input type="radio" name="radio-1">Option 2</label>
+ -->
+  
+   <div data-role="navbar">
+     <ul>
+    <li><a href="" data-icon="arrow-u" data-iconpos="top" class="ui-btn-actie ui-state-persist">Basic</a></li>
+    <li><a href="" data-icon="arrow-d" data-iconpos="top">Life</a></li>
+	<li><a href="" data-icon="arrow-r" data-iconpos="top">Science</a></li>
+	<li><a href="" data-icon="arrow-l" data-iconpos="top">Misc.</a></li>
+    </ul>
+	</br>
+	</div>
+  
+ </div>
+ <!--<a href="#mypanel">Open panel</a> -->
+ 
  <!-- 
  
- <div data-role="panel" id="mypanel" data-position="center" data-displey="overlay">
+ <div data-role="panel" id="mypanel" data-position="center" data-display="overlay">
  <label><input type="checkbox" name="checkbox-0">I agree</label>
  <label><input type="radio" name="radio-0">Option 1</label>
  <label><input type="radio" name="radio-1">Option 2</label>
@@ -139,8 +159,8 @@
    
    <div data-position="fixed" data-role="footer" data-theme="c">
    <div align="center">
-      <a href="#cover" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
- <a href="#cover" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
+      <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
+ <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
       <a href="" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
    <p data-inline="false">(c) Adil Hussain</p>
    </div>
