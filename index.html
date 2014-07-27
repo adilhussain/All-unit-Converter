@@ -16,9 +16,23 @@
    <div data-role="header" data-theme="c">
 		<a href="index.html" data-icon="back">back</a>
 		<h1>All Unit Converter</h1>
+	<!--
 	<a href="#optionsPanel" data-icon="gear" class="ui-btn-right">Options</a>
 	<span class="ui-title" />
-    
+    -->
+
+	<a href="#popupMenu" data-rel="popup" data-icon="gear" class="ui-btn-right">Open Popup</a>
+   <div data-role="popup" id="popupMenu">
+    <ul data-role="listview" data-inset="true" >
+            <li data-role="divider" data-theme="a">Edit Element</li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Display</a></li>
+    </ul>
+</div>
+	
+	
+	
+	
    <div data-role="navbar">
      <ul>
     <li><a href="" data-icon="arrow-u" data-iconpos="top" class="ui-btn-actie ui-state-persist">Basic</a></li>
@@ -38,6 +52,23 @@
     </div>
    
    </div><!-- header finish -->
+   
+  <!-- 
+   <a href="#popupBasic" data-rel="popup">Open Popup</a>
+
+<div data-role="popup" id="popupBasic">
+	<p>This is a completely basic popup, no options set.<p>
+</div>
+   -->
+   
+   <a href="#popupMenu" data-rel="popup">Open Popup</a>
+   <div data-role="popup" id="popupMenu">
+    <ul data-role="listview" data-inset="true" >
+            <li data-role="divider" data-theme="a">Edit Element</li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Display</a></li>
+    </ul>
+</div>
    
    
    <div data-role="content" ><!-- content started -->
