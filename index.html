@@ -20,15 +20,43 @@
 	<a href="#optionsPanel" data-icon="gear" class="ui-btn-right">Options</a>
 	<span class="ui-title" />
     -->
-
-	<a href="#popupMenu" data-rel="popup" data-icon="gear" class="ui-btn-right">Open Popup</a>
-   <div data-role="popup" id="popupMenu">
+<a href="#optionsPanel1" data-icon="gear" class="ui-btn-right">Options</a>
+	<div data-role="panel"  data-theme="c" id="optionsPanel1" data-position="right" data-display="overlay" >
+	<div data-role="content">
+<ul data-role="listview">
+    <li>
+        <h3>Colors</h3>
+        <ul>
+            <li>Blue
+                <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">Edit</a>
+                </p>
+            </li>
+            <li>Orange</li>
+            <li>Purple</li>
+        </ul>
+    </li>
+    <li><h3>Item</h3>
+        <p class="edit">
+            <a href="#" onclick="openEditMenu()" data-role="button"
+                data-icon="gear" data-inline="true" data-iconpos="notext">Edit</a>
+        </p></li>
+    </ul>
+</div>
+<div data-role="popup" id="popupMenu">
     <ul data-role="listview" data-inset="true" >
             <li data-role="divider" data-theme="a">Edit Element</li>
             <li><a href="#">Edit</a></li>
-            <li><a href="#">Display</a></li>
+            ...
     </ul>
 </div>
+</div>
+<script>
+    function openEditMenu() {
+        $('#popupMenu').popup('open');
+    }
+</script>
 	
 	
 	
