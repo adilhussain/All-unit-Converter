@@ -25,16 +25,45 @@
 	<div data-role="content">
 <ul data-role="listview">
     <li>
-        <h3>Colors</h3>
+        <h3>Units</h3>
         <ul>
-            <li>Blue
-                <p class="edit">
+            <li>Basic
+			<a href="#" onclick="openEditMenu('basic')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
                     <a href="#" onclick="openEditMenu()" data-role="button"
-                        data-icon="gear" data-inline="true" data-iconpos="notext">Edit</a>
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
                 </p>
+				-->
             </li>
-            <li>Orange</li>
-            <li>Purple</li>
+			 <li>Life
+			<a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+                </p>
+				-->
+            </li> 
+			<li>Science
+			<a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+                </p>
+				-->
+            </li>
+			 <li>Miscellaneous.
+			<a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+                </p>
+				-->
+            </li>
+            
         </ul>
     </li>
     <li><h3>Item</h3>
@@ -44,18 +73,24 @@
         </p></li>
     </ul>
 </div>
-<div data-role="popup" id="popupMenu">
+<div data-role="popup" id="basic">
     <ul data-role="listview" data-inset="true" >
             <li data-role="divider" data-theme="a">Edit Element</li>
-            <li><a href="#">Edit</a></li>
-            ...
+            <li><a href="#">Length</a></li>
+			<li><a href="#">Area</a></li>
+			<li><a href="#">Weight</a></li>
+			<li><a href="#">Volume</a></li>
     </ul>
 </div>
 </div>
 <script>
-    function openEditMenu() {
-        $('#popupMenu').popup('open');
-    }
+    function openEditMenu(param) {
+alert('\'#' + param + '\'');
+  
+	<!--$(document.getElementById('param')).popup('open');
+    -->
+	$('#'+param).popup('open'); 
+	}
 </script>
 	
 	
