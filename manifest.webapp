@@ -1,10 +1,10 @@
 {
   "version": "1.0",
-  "name": "First jQuery mobile example",
-  "description": "Hello World",
+  "name": "All Unit Converter",
+  "description": "Takes any quantity of a particular unit and converts it to other",
   "launch_path": "/index.html",
   "developer": {
-    "name": "Adil Hussain",
+    "name": "OutKa$t",
     "url": "http://developer.mozilla.org"
   },
   "default_locale": "en"
