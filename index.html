@@ -17,43 +17,26 @@
 	function showNavBar(param)
 {
  
-   
-document.getElementById('super_nav_bar').style.display= "none";
- document.getElementById('super_nav_bar').style.display = "block";
- document.getElementById(param).style.display = "block";
- 
- 
-//document.getElementById('navbar_basic').style.display = "block"; // hide body div tag
+document.getElementById('navbar_basic').style.display = "hidden"; // hide body div tag
 //document.getElementById('basic_navbar').style.display = "block"; // show body1 div tag
 //document.getElementById('body1').innerHTML = "If you can see this, JavaScript function worked"; // display text if JavaScript worked
 
 } //End showNavBar
-
-	function computeLoan(){
-	var amount = document.getElementById('amount').value;
-	var interest_rate = document.getElementById('interest_rate').value;
-	var months = document.getElementById('months').value;
-	var interest = (amount * (interest_rate * 0.1)) / months;
-	var payment = ((amount / months) + interest).toFixed(2);
-	payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	document.getElementById('payment').innerHTML= "Monthly Payment = $"+payment;
-	
-	}//End computeLoan
 	
 	
 </script>
-<!-- <link rel="stylesheet" href="themes/adil_theme.css"> -->
+<link rel="stylesheet" href="themes/UnitConverter.css">
  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
   <link rel="stylesheet" href="styles/mystyles.css">
 </head>
 <body>
 <div data-role="page" id="homePage">
-   <div data-role="header" data-theme="b">
+   <div data-role="header" data-theme="c">
 		<a href="index.html" data-icon="back">back</a>
 		<h1>All Unit Converter</h1>
 	
 <a href="#optionsPanel1" data-icon="gear" class="ui-btn-right">Options</a>
-	<div data-role="panel"  data-theme="b" id="optionsPanel1" data-position="right" data-display="overlay" >
+	<div data-role="panel"  data-theme="c" id="optionsPanel1" data-position="right" data-display="overlay" >
 	<div data-role="content">
 <ul data-role="listview">
     <li>
@@ -105,7 +88,7 @@ document.getElementById('super_nav_bar').style.display= "none";
         </p></li>
     </ul>
 </div>
-<div data-role="popup" id="basic">
+<div data-role="popup" id="basic"> data-theme="b">
     <ul data-role="listview" data-inset="true" >
             <li data-role="divider" data-theme="b">Basic</li>
             <li><a href="#">Length</a></li>
@@ -114,7 +97,7 @@ document.getElementById('super_nav_bar').style.display= "none";
 			<li><a href="#">Volume</a></li>
     </ul>
 </div>
-<div data-role="popup" id="life">
+<div data-role="popup" id="life" data-theme="b">
     <ul data-role="listview" data-inset="true" >
             <li data-role="divider" data-theme="b">Life</li>
             <li><a href="#">Currency</a></li>
@@ -124,7 +107,7 @@ document.getElementById('super_nav_bar').style.display= "none";
 			<li><a href="#">Speed</a></li>
     </ul>
 </div>
-<div data-role="popup" id="science">
+<div data-role="popup" id="science" data-theme="b">
     <ul data-role="listview" data-inset="true" >
             <li data-role="divider" data-theme="b">Science</li>
             <li><a href="#">Pressure</a></li>
@@ -139,8 +122,6 @@ document.getElementById('super_nav_bar').style.display= "none";
             <li><a href="#">Angle</a></li>
 			<li><a href="#">Data</a></li>
 			<li><a href="#">Fuel</a></li>
-			<li><a href="#page2" onclick="computeLoan()" data-role="button"
-                data-icon="gear" data-inline="true">Loan</a></li>
 			
     </ul>
 </div>
@@ -154,20 +135,16 @@ document.getElementById('super_nav_bar').style.display= "none";
      <ul>
 	 <li><a href="#" onclick="showNavBar('navbar_basic')" data-role="button"
                         data-icon="gear" data-inline="true" data-iconpos="notext" class="ui-btn-actie ui-state-persist">Basic</a></li>
-    <li><a href="#" onclick="showNavBar('navbar_life')" data-role="button"
+    <li><a href="#" onclick="openEditMenu('life')" data-role="button"
                         data-icon="gear" data-inline="true" data-iconpos="notext">Life</a></li>
-	<li><a href="#" onclick="showNavBar('navbar_science')" data-role="button"
+	<li><a href="#" onclick="openEditMenu('science')" data-role="button"
                         data-icon="gear" data-inline="true" data-iconpos="notext">Science</a></li>
-	<li><a href="#" onclick="showNavBar('navbar_misc')" data-role="button"
+	<li><a href="#" onclick="openEditMenu('misc')" data-role="button"
                         data-icon="gear" data-inline="true" data-iconpos="notext">Misc</a></li>
 	
     </ul>
 	</br>
 	</div>
-	
-	
-	<div data-role="navbar" id="super_nav_bar" style="display: none">
-	
 	<div data-role="navbar" id="navbar_basic" style="display: none">
 	<ul>
     <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Length</a></li>
@@ -176,32 +153,6 @@ document.getElementById('super_nav_bar').style.display= "none";
 	<li><a href="" data-icon="arrow-left" data-iconpos="top">Volume</a></li>
     </ul>
     </div>
-	<div data-role="navbar" id="navbar_life" style="display: none">
-	<ul>
-    <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Currency</a></li>
-    <li><a href="" data-icon="mail" data-iconpos="top">Temperature</a></li>
-	<li><a href="" data-icon="arrow-right" data-iconpos="top">Time</a></li>
-	<li><a href="" data-icon="arrow-left" data-iconpos="top">Speed</a></li>
-    </ul>
-    </div>
-	<div data-role="navbar" id="navbar_science" style="display: none">
-	<ul>
-    <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Pressure</a></li>
-    <li><a href="" data-icon="mail" data-iconpos="top">Work</a></li>
-	<li><a href="" data-icon="arrow-right" data-iconpos="top">Force</a></li>
-	<li><a href="" data-icon="arrow-left" data-iconpos="top">Power</a></li>
-    </ul>
-    </div>
-	<div data-role="navbar" id="navbar_misc" style="display: none">
-	<ul>
-    <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Angle</a></li>
-    <li><a href="" data-icon="mail" data-iconpos="top">Data</a></li>
-	<li><a href="" data-icon="arrow-right" data-iconpos="top">Fuel</a></li>
-	<li><a href="" data-icon="arrow-left" data-iconpos="top">Loan</a></li>
-    </ul>
-    </div>
-	</div>
-	
    
  <!--   
    <div data-role="navbar" >
@@ -223,7 +174,7 @@ document.getElementById('super_nav_bar').style.display= "none";
 <div data-role="popup" id="popupBasic">
 	<p>This is a completely basic popup, no options set.<p>
 </div>
-   
+   -->
    
    <a href="#popupMenu" data-rel="popup">Open Popup</a>
    <div data-role="popup" id="popupMenu">
@@ -233,13 +184,35 @@ document.getElementById('super_nav_bar').style.display= "none";
             <li><a href="#">Display</a></li>
     </ul>
 </div>
-   -->
+   
    
    <div data-role="content" ><!-- content started -->
    <div align="center">
-  <!-- <h1 class="heading">My StoryBook!</h1> -->
+  <!-- <h1 class="heading">My StoryBoook!</h1>
   <div align="left" data-theme="b">
+ <table data-role="table" id="my-table" data-mode="columntoggle">
+ <thead>
+ <tr>
+     <th data-priority="1">Rank</th>
+     <th data-priority="2">Movie Title</th>
+     <th>Year</th>
+     <th><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+     <th>Reviews</th>
+  </tr>
+ </thead>
+ <tbody>
+ <tr>
+     <th>1</th>
+     <td><a hred="foo.com" data-rel="external">Citizen Kane</a></td>
+     <td>1941</td>
+     <td>100%</td>
+     <td>74</td>
+ </tr>
+ </tbody>
  
+ 
+ 
+ </table>-->
  
  <div data-role="panel"  data-theme="b" id="optionsPanel" data-position="right" data-display="overlay" >
  <!--<label><input type="checkbox" name="checkbox-0">I agree</label>
@@ -266,7 +239,7 @@ document.getElementById('super_nav_bar').style.display= "none";
  <label><input type="checkbox" name="checkbox-0">I agree</label>
  <label><input type="radio" name="radio-0">Option 1</label>
  <label><input type="radio" name="radio-1">Option 2</label>
- Hi I am Adil Hussain
+ Hey Checking 
  </div>
  <a href="#mypanel">Open panel</a>
  
@@ -309,7 +282,7 @@ document.getElementById('super_nav_bar').style.display= "none";
       <a href="" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
  <a href="" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
       <a href="#page2" data-transition="slideup" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-  <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+ <p data-inline="true">(c) OutKa$t</p>
    </div>
    </div>
    </div>
@@ -335,7 +308,7 @@ document.getElementById('super_nav_bar').style.display= "none";
       <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
  <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
       <a href="page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-   <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+   <p data-inline="true">(c) OutKa$t</p> 
    </div>
    </div>
    
@@ -345,7 +318,7 @@ document.getElementById('super_nav_bar').style.display= "none";
    <!-- *******************************page 2****************************************************************-->
    
    <div data-role="page" id="page2">
-   <div data-role="header" data-theme="b">
+   <div data-role="header" data-theme="c">
      Calculations Page
    </div>
    
@@ -355,25 +328,19 @@ document.getElementById('super_nav_bar').style.display= "none";
    <h1 class="heading">Calculations!</h1>
    <div align="left">
    <input type="range" min="0" max="100"></input>
-   <p> Loan Amount: $<input id="amount" type="number" min="1" max="10000000"
-   onchange="computeLoan()" data-theme="b"></p>
-   <p> Interest Rate: $<input id="interest_rate" type="number" min="0" max="100" value="10" step=".1"
-   onchange="computeLoan()" data-theme="b"></p>
-   <p> Months: $<input id="months" type="number" min="1" max="72" step="1"
-   onchange="computeLoan()" data-theme="b"></p>
-   <h2 id="payment"></h2>
+   
    
    
    </div> 
   </div>
    </div>
    
-   <div data-position="fixed" data-role="footer" data-theme="b">
+   <div data-position="fixed" data-role="footer" data-theme="c">
    <div align="center">
       <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
  <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
       <a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-  <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+  <p data-inline="true">(c) OutKa$t</p>
    </div>
    </div>
    
@@ -393,35 +360,3 @@ document.getElementById('super_nav_bar').style.display= "none";
      home delete plus arrow-u arrow-d check gear grid star custom arrow-r
      arrow-l minus refresh forward back alert info search
       -->
-	   
-	  <!-- table adding
-	  
-	  
-	  <table data-role="table" id="my-table" data-mode="columntoggle">
- <thead>
- <tr>
-     <th data-priority="1">Rank</th>
-     <th data-priority="2">Movie Title</th>
-     <th>Year</th>
-     <th><abbr title="Rotten Tomato Rating">Rating</abbr></th>
-     <th>Reviews</th>
-  </tr>
- </thead>
- <tbody>
- <tr>
-     <th>1</th>
-     <td><a hred="foo.com" data-rel="external">Citizen Kane</a></td>
-     <td>1941</td>
-     <td>100%</td>
-     <td>74</td>
- </tr>
- </tbody>
- 
- 
- 
- </table>
-	  
-	  
-	  -->
-	  
-	  
