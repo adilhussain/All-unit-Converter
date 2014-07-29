@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "name": "First jQuery mobile example",
+  "description": "Hello World",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "Adil Hussain",
+    "url": "http://developer.mozilla.org"
+  },
+  "default_locale": "en"
+}

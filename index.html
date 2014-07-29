@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>All Unit Converter</title>
+   
+   <link rel="stylesheet" href="styles/jquery.mobile-1.4.2.min.css">
+   <script src="scripts/jquery-2.1.1.min.js"></script> 
+    <script src="scripts/jquery.mobile-1.4.2.min.js"></script>
+ <script>
+    function openEditMenu(param) {
+  <!-- alert('\'#' + param + '\''); -->
+  
+
+	$('#'+param).popup('open'); 
+	}//End openEditMenu
+	
+	function showNavBar(param)
+{
+ 
+document.getElementById('navbar_basic').style.display = "hidden"; // hide body div tag
+//document.getElementById('basic_navbar').style.display = "block"; // show body1 div tag
+//document.getElementById('body1').innerHTML = "If you can see this, JavaScript function worked"; // display text if JavaScript worked
+
+} //End showNavBar
+	
+	
+</script>
+<!-- <link rel="stylesheet" href="themes/adil_theme.css"> -->
+ <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
+  <link rel="stylesheet" href="styles/mystyles.css">
+</head>
+<body>
+<div data-role="page" id="homePage">
+   <div data-role="header" data-theme="b">
+		<a href="index.html" data-icon="back">back</a>
+		<h1>All Unit Converter</h1>
+	
+<a href="#optionsPanel1" data-icon="gear" class="ui-btn-right">Options</a>
+	<div data-role="panel"  data-theme="b" id="optionsPanel1" data-position="right" data-display="overlay" >
+	<div data-role="content">
+<ul data-role="listview">
+    <li>
+        <h3>Units</h3>
+        <ul>
+            <li>Basic
+			<a href="#" onclick="openEditMenu('basic')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+                </p>
+				-->
+            </li>
+			 <li>Life
+			<a href="#" onclick="openEditMenu('life')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+                </p>
+				-->
+            </li> 
+			<li>Science
+			<a href="#" onclick="openEditMenu('science')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+                </p>
+				-->
+            </li>
+			 <li>Miscellaneous.
+			<a href="#" onclick="openEditMenu('misc')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+               <!-- <p class="edit">
+                    <a href="#" onclick="openEditMenu()" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">hfjdkshjsdk</a>
+                </p>
+				-->
+            </li>
+            
+        </ul>
+    </li>
+    <li><h3>Item</h3>
+        <p class="edit">
+            <a href="#" onclick="openEditMenu()" data-role="button"
+                data-icon="gear" data-inline="true" data-iconpos="notext">Edit</a>
+        </p></li>
+    </ul>
+</div>
+<div data-role="popup" id="basic">
+    <ul data-role="listview" data-inset="true" >
+            <li data-role="divider" data-theme="b">Basic</li>
+            <li><a href="#">Length</a></li>
+			<li><a href="#">Area</a></li>
+			<li><a href="#">Weight</a></li>
+			<li><a href="#">Volume</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="life">
+    <ul data-role="listview" data-inset="true" >
+            <li data-role="divider" data-theme="b">Life</li>
+            <li><a href="#">Currency</a></li>
+			<li><a href="#page2" onclick="calculateLifeTemperature()" data-role="button"
+                data-icon="gear" data-inline="true" >Temperature</a></li>
+			<li><a href="#">Time</a></li>
+			<li><a href="#">Speed</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="science">
+    <ul data-role="listview" data-inset="true" >
+            <li data-role="divider" data-theme="b">Science</li>
+            <li><a href="#">Pressure</a></li>
+			<li><a href="#">Force</a></li>
+			<li><a href="#">Work</a></li>
+			<li><a href="#">Power</a></li>
+    </ul>
+</div>
+<div data-role="popup" id="misc" data-theme="b">
+    <ul data-role="listview" data-inset="true" >
+            <li data-role="divider" data-theme="b">Miscellaneous</li>
+            <li><a href="#">Angle</a></li>
+			<li><a href="#">Data</a></li>
+			<li><a href="#">Fuel</a></li>
+			
+    </ul>
+</div>
+</div>
+
+	
+	
+	
+	
+   <div data-role="navbar">
+     <ul>
+	 <li><a href="#" onclick="showNavBar('navbar_basic')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext" class="ui-btn-actie ui-state-persist">Basic</a></li>
+    <li><a href="#" onclick="openEditMenu('life')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">Life</a></li>
+	<li><a href="#" onclick="openEditMenu('science')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">Science</a></li>
+	<li><a href="#" onclick="openEditMenu('misc')" data-role="button"
+                        data-icon="gear" data-inline="true" data-iconpos="notext">Misc</a></li>
+	
+    </ul>
+	</br>
+	</div>
+	<div data-role="navbar" id="navbar_basic" style="display: none">
+	<ul>
+    <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Length</a></li>
+    <li><a href="" data-icon="mail" data-iconpos="top">Area</a></li>
+	<li><a href="" data-icon="arrow-right" data-iconpos="top">Weight</a></li>
+	<li><a href="" data-icon="arrow-left" data-iconpos="top">Volume</a></li>
+    </ul>
+    </div>
+   
+ <!--   
+   <div data-role="navbar" >
+	<ul>
+    <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Length</a></li>
+    <li><a href="" data-icon="mail" data-iconpos="top">Area</a></li>
+	<li><a href="" data-icon="arrow-right" data-iconpos="top">Weight</a></li>
+	<li><a href="" data-icon="arrow-left" data-iconpos="top">Volume</a></li>
+    </ul>
+    </div>
+	-->
+   
+   
+   </div><!-- header finish -->
+   
+  <!-- 
+   <a href="#popupBasic" data-rel="popup">Open Popup</a>
+
+<div data-role="popup" id="popupBasic">
+	<p>This is a completely basic popup, no options set.<p>
+</div>
+   -->
+   
+   <a href="#popupMenu" data-rel="popup">Open Popup</a>
+   <div data-role="popup" id="popupMenu">
+    <ul data-role="listview" data-inset="true" >
+            <li data-role="divider" data-theme="b">Edit Element</li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Display</a></li>
+    </ul>
+</div>
+   
+   
+   <div data-role="content" ><!-- content started -->
+   <div align="center">
+   <h1 class="heading">My StoryBoook!</h1>
+  <div align="left" data-theme="b">
+ <table data-role="table" id="my-table" data-mode="columntoggle">
+ <thead>
+ <tr>
+     <th data-priority="1">Rank</th>
+     <th data-priority="2">Movie Title</th>
+     <th>Year</th>
+     <th><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+     <th>Reviews</th>
+  </tr>
+ </thead>
+ <tbody>
+ <tr>
+     <th>1</th>
+     <td><a hred="foo.com" data-rel="external">Citizen Kane</a></td>
+     <td>1941</td>
+     <td>100%</td>
+     <td>74</td>
+ </tr>
+ </tbody>
+ 
+ 
+ 
+ </table>
+ 
+ <div data-role="panel"  data-theme="b" id="optionsPanel" data-position="right" data-display="overlay" >
+ <!--<label><input type="checkbox" name="checkbox-0">I agree</label>
+ <label><input type="radio" name="radio-0">Option 1</label>
+ <label><input type="radio" name="radio-1">Option 2</label>
+ -->
+  
+   <div data-role="navbar">
+     <ul>
+    <li><a href="" data-icon="arrow-u" data-iconpos="top" class="ui-btn-actie ui-state-persist">Basic</a></li>
+    <li><a href="" data-icon="arrow-d" data-iconpos="top">Life</a></li>
+	<li><a href="" data-icon="arrow-r" data-iconpos="top">Science</a></li>
+	<li><a href="" data-icon="arrow-l" data-iconpos="top">Misc.</a></li>
+    </ul>
+	</br>
+	</div>
+  
+ </div>
+ <!--<a href="#mypanel">Open panel</a> -->
+ 
+ <!-- 
+ 
+ <div data-role="panel" id="mypanel" data-position="center" data-display="overlay">
+ <label><input type="checkbox" name="checkbox-0">I agree</label>
+ <label><input type="radio" name="radio-0">Option 1</label>
+ <label><input type="radio" name="radio-1">Option 2</label>
+ Hi I am Adil Hussain
+ </div>
+ <a href="#mypanel">Open panel</a>
+ 
+ 
+ 
+ <select id="select-based-flipswitch" data-role="flipswitch">
+ <option value="leave">Bye</option>
+ <option value="arrive">Hi</option>
+ </select>
+ 
+ 
+ 
+ <label><input  type="checkbox" name="checkbox-0">I agree</label>
+ <label><input type="radio" name="radio-0">Option 1</label>
+  <label><input type="radio" name="radio-1">Option 2</label>
+  <input type="range" min="0" max="100" data-theme="b"></input>
+  <div data-content-theme="c" data-role="collapsible" data-collapsed-icon="gear" data-expanded-icon="phone">
+  <h4>I'm a header</h4>
+  I'm the collapsible content. By default, I am collapsible
+  but you can click the header element to open me.
+   <div data-content-theme="c" data-role="collapsible" data-collapsed-icon="gear" data-expanded-icon="phone">
+  <h4>I'm a header</h4>
+  I'm the collapsible content. By default, I am collapsible
+  but you can click the header element to open me.
+  </div>
+  </div>
+  
+  
+  
+  
+ 
+  -->
+ 
+   </div> 
+  </div>
+   </div> <!-- content finished -->
+   
+   <div data-position="fixed" data-role="footer" data-theme="b">
+   <div align="center">
+      <a href="" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
+ <a href="" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
+      <a href="#page2" data-transition="slideup" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
+  <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+   </div>
+   </div>
+   </div>
+   
+   
+   <div data-role="page" id="page1">
+   <div data-role="header" data-theme="b">
+     THIS IS THE HEADER
+   </div>
+   
+   
+   <div data-role="content">
+   <div align="center">
+   <h1 class="heading">Page 1!</h1>
+   <div align="left">
+   This is page 1 of my personal story book.
+   </div> 
+  </div>
+   </div>
+   
+   <div data-position="fixed" data-role="footer" data-theme="b">
+   <div align="center">
+      <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
+ <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
+      <a href="page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
+   <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+   </div>
+   </div>
+   
+   
+   </div>
+   
+   <!-- *******************************page 2****************************************************************-->
+   
+   <div data-role="page" id="page2">
+   <div data-role="header" data-theme="b">
+     Calculations Page
+   </div>
+   
+   
+   <div data-role="content">
+   <div align="center">
+   <h1 class="heading">Calculations!</h1>
+   <div align="left">
+   <input type="range" min="0" max="100"></input>
+   
+   
+   
+   </div> 
+  </div>
+   </div>
+   
+   <div data-position="fixed" data-role="footer" data-theme="b">
+   <div align="center">
+      <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
+ <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
+      <a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
+  <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+   </div>
+   </div>
+   
+   
+   </div>
+   
+   <!-- ***************************End page2*****************************************************************-->
+   
+   </body>
+</html>
+
+
+
+
+
+ <!--  data-icon list
+     home delete plus arrow-u arrow-d check gear grid star custom arrow-r
+     arrow-l minus refresh forward back alert info search
+      -->
