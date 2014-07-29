@@ -1,10 +1,10 @@
 {
   "version": "1.0",
   "name": "First jQuery mobile example",
-  "description": "Unit Converter",
+  "description": "Hello World",
   "launch_path": "/index.html",
   "developer": {
-    "name": "OutKa$t",
+    "name": "Adil Hussain",
     "url": "http://developer.mozilla.org"
   },
   "default_locale": "en"
