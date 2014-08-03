@@ -2,11 +2,17 @@
 <html>
 <head>
    <title>All Unit Converter</title>
-   
+ 
    <link rel="stylesheet" href="styles/jquery.mobile-1.4.2.min.css">
+   <link rel="stylesheet" href="themes/UnitConverter.css"
+   <link rel="stylesheet" href="styles/mystyles.css">
    <script src="scripts/jquery-2.1.1.min.js"></script> 
     <script src="scripts/jquery.mobile-1.4.2.min.js"></script>
+	<style>
+	
+	</style>
  <script>
+ var nav_bar;
     function openEditMenu(param) {
   <!-- alert('\'#' + param + '\''); -->
   
@@ -15,12 +21,22 @@
 	}//End openEditMenu
 	
 	function showNavBar(param)
-{
+{  
+   //$document.getElementById(nav_bar).style.display= "none";
+  if(nav_bar)
+  {
+  document.getElementById(nav_bar).style.display= "none";
+  }
  
-   
-document.getElementById('super_nav_bar').style.display= "none";
- document.getElementById('super_nav_bar').style.display = "block";
- document.getElementById(param).style.display = "block";
+		nav_bar=param;
+  //alert(nav_bar);
+    document.getElementById(nav_bar).style.display= "block";
+  
+//document.getElementById('super_nav_bar').style.display= "none";
+ //document.getElementById('super_navbar').style.display = "block";
+ //document.getElementById(param).style.visibility= "visible";
+
+ 
  
  
 //document.getElementById('navbar_basic').style.display = "block"; // hide body div tag
@@ -42,18 +58,18 @@ document.getElementById('super_nav_bar').style.display= "none";
 	
 	
 </script>
-<!-- <link rel="stylesheet" href="themes/adil_theme.css"> -->
+<link rel="stylesheet" href="themes/unitConverter.css">
  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
-  <link rel="stylesheet" href="styles/mystyles.css">
+  
 </head>
 <body>
 <div data-role="page" id="homePage">
-   <div data-role="header" data-theme="b">
+   <div data-role="header" data-theme="c">
 		<a href="index.html" data-icon="back">back</a>
-		<h1>All Unit Converter</h1>
+		<h1 id="app_name">All Unit Converter</h1>
 	
 <a href="#optionsPanel1" data-icon="gear" class="ui-btn-right">Options</a>
-	<div data-role="panel"  data-theme="b" id="optionsPanel1" data-position="right" data-display="overlay" >
+	<div data-role="panel"  data-theme"b" id="optionsPanel1" data-position="right" data-display="overlay">
 	<div data-role="content">
 <ul data-role="listview">
     <li>
@@ -107,7 +123,7 @@ document.getElementById('super_nav_bar').style.display= "none";
 </div>
 <div data-role="popup" id="basic">
     <ul data-role="listview" data-inset="true" >
-            <li data-role="divider" data-theme="b">Basic</li>
+            <li data-role="divider" data-theme="c">Basic</li>
             <li><a href="#">Length</a></li>
 			<li><a href="#">Area</a></li>
 			<li><a href="#">Weight</a></li>
@@ -116,7 +132,7 @@ document.getElementById('super_nav_bar').style.display= "none";
 </div>
 <div data-role="popup" id="life">
     <ul data-role="listview" data-inset="true" >
-            <li data-role="divider" data-theme="b">Life</li>
+            <li data-role="divider" data-theme="c">Life</li>
             <li><a href="#">Currency</a></li>
 			<li><a href="#page2" onclick="calculateLifeTemperature()" data-role="button"
                 data-icon="gear" data-inline="true" >Temperature</a></li>
@@ -126,16 +142,16 @@ document.getElementById('super_nav_bar').style.display= "none";
 </div>
 <div data-role="popup" id="science">
     <ul data-role="listview" data-inset="true" >
-            <li data-role="divider" data-theme="b">Science</li>
+            <li data-role="divider" data-theme="c">Science</li>
             <li><a href="#">Pressure</a></li>
 			<li><a href="#">Force</a></li>
 			<li><a href="#">Work</a></li>
 			<li><a href="#">Power</a></li>
     </ul>
 </div>
-<div data-role="popup" id="misc" data-theme="b">
+<div data-role="popup" id="misc" data-theme="c">
     <ul data-role="listview" data-inset="true" >
-            <li data-role="divider" data-theme="b">Miscellaneous</li>
+            <li data-role="divider" data-theme="c">Miscellaneous</li>
             <li><a href="#">Angle</a></li>
 			<li><a href="#">Data</a></li>
 			<li><a href="#">Fuel</a></li>
@@ -166,17 +182,16 @@ document.getElementById('super_nav_bar').style.display= "none";
 	</div>
 	
 	
-	<div data-role="navbar" id="super_nav_bar" style="display: none">
 	
-	<div data-role="navbar" id="navbar_basic" style="display: none">
+	<div data-role="navbar" id="navbar_basic" style="display:none">
 	<ul>
-    <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Length</a></li>
+    <li><a href="calc_length.html" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Length</a></li>
     <li><a href="" data-icon="mail" data-iconpos="top">Area</a></li>
 	<li><a href="" data-icon="arrow-right" data-iconpos="top">Weight</a></li>
 	<li><a href="" data-icon="arrow-left" data-iconpos="top">Volume</a></li>
     </ul>
     </div>
-	<div data-role="navbar" id="navbar_life" style="display: none">
+	<div data-role="navbar" id="navbar_life" style="display:none">
 	<ul>
     <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Currency</a></li>
     <li><a href="" data-icon="mail" data-iconpos="top">Temperature</a></li>
@@ -184,7 +199,7 @@ document.getElementById('super_nav_bar').style.display= "none";
 	<li><a href="" data-icon="arrow-left" data-iconpos="top">Speed</a></li>
     </ul>
     </div>
-	<div data-role="navbar" id="navbar_science" style="display: none">
+	<div data-role="navbar" id="navbar_science" style="display:none">
 	<ul>
     <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Pressure</a></li>
     <li><a href="" data-icon="mail" data-iconpos="top">Work</a></li>
@@ -192,27 +207,19 @@ document.getElementById('super_nav_bar').style.display= "none";
 	<li><a href="" data-icon="arrow-left" data-iconpos="top">Power</a></li>
     </ul>
     </div>
-	<div data-role="navbar" id="navbar_misc" style="display: none">
+	<div data-role="navbar" id="navbar_misc" style="display:none">
 	<ul>
     <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Angle</a></li>
     <li><a href="" data-icon="mail" data-iconpos="top">Data</a></li>
 	<li><a href="" data-icon="arrow-right" data-iconpos="top">Fuel</a></li>
 	<li><a href="" data-icon="arrow-left" data-iconpos="top">Loan</a></li>
     </ul>
-    </div>
+    
 	</div>
 	
+	
    
- <!--   
-   <div data-role="navbar" >
-	<ul>
-    <li><a href="" data-icon="phone" data-iconpos="top" class="ui-btn-actie ui-state-persist">Length</a></li>
-    <li><a href="" data-icon="mail" data-iconpos="top">Area</a></li>
-	<li><a href="" data-icon="arrow-right" data-iconpos="top">Weight</a></li>
-	<li><a href="" data-icon="arrow-left" data-iconpos="top">Volume</a></li>
-    </ul>
-    </div>
-	-->
+ 
    
    
    </div><!-- header finish -->
@@ -241,7 +248,7 @@ document.getElementById('super_nav_bar').style.display= "none";
   <div align="left" data-theme="b">
  
  
- <div data-role="panel"  data-theme="b" id="optionsPanel" data-position="right" data-display="overlay" >
+ <div data-role="panel"  data-theme="c" id="optionsPanel" data-position="right" data-display="overlay" >
  <!--<label><input type="checkbox" name="checkbox-0">I agree</label>
  <label><input type="radio" name="radio-0">Option 1</label>
  <label><input type="radio" name="radio-1">Option 2</label>
@@ -304,12 +311,12 @@ document.getElementById('super_nav_bar').style.display= "none";
   </div>
    </div> <!-- content finished -->
    
-   <div data-position="fixed" data-role="footer" data-theme="b">
+   <div data-position="fixed" data-role="footer" data-theme="c">
    <div align="center">
       <a href="" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
  <a href="" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
       <a href="#page2" data-transition="slideup" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-  <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+   <p data-inline="true">(c) OutKa$t</p>
    </div>
    </div>
    </div>
@@ -330,12 +337,12 @@ document.getElementById('super_nav_bar').style.display= "none";
   </div>
    </div>
    
-   <div data-position="fixed" data-role="footer" data-theme="b">
+   <div data-position="fixed" data-role="footer" data-theme="c">
    <div align="center">
       <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
  <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
       <a href="page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-   <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+   <p data-inline="true">(c) OutKa$t</p>
    </div>
    </div>
    
@@ -345,7 +352,7 @@ document.getElementById('super_nav_bar').style.display= "none";
    <!-- *******************************page 2****************************************************************-->
    
    <div data-role="page" id="page2">
-   <div data-role="header" data-theme="b">
+   <div data-role="header" data-theme="c">
      Calculations Page
    </div>
    
@@ -356,11 +363,11 @@ document.getElementById('super_nav_bar').style.display= "none";
    <div align="left">
    <input type="range" min="0" max="100"></input>
    <p> Loan Amount: $<input id="amount" type="number" min="1" max="10000000"
-   onchange="computeLoan()" data-theme="b"></p>
+   onchange="computeLoan()" data-theme="c"></p>
    <p> Interest Rate: $<input id="interest_rate" type="number" min="0" max="100" value="10" step=".1"
-   onchange="computeLoan()" data-theme="b"></p>
+   onchange="computeLoan()" data-theme="c"></p>
    <p> Months: $<input id="months" type="number" min="1" max="72" step="1"
-   onchange="computeLoan()" data-theme="b"></p>
+   onchange="computeLoan()" data-theme="c"></p>
    <h2 id="payment"></h2>
    
    
@@ -368,12 +375,12 @@ document.getElementById('super_nav_bar').style.display= "none";
   </div>
    </div>
    
-   <div data-position="fixed" data-role="footer" data-theme="b">
+   <div data-position="fixed" data-role="footer" data-theme="c">
    <div align="center">
       <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
  <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
       <a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-  <!-- <p data-inline="false">(c) Adil Hussain</p> -->
+  <p data-inline="true">(c) OutKa$t</p>
    </div>
    </div>
    
