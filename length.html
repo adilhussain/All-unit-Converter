@@ -1,3 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>All Unit Converter</title>
+ 
+   <link rel="stylesheet" href="styles/jquery.mobile-1.4.2.min.css">
+   <link rel="stylesheet" href="themes/UnitConverter.css"
+   <link rel="stylesheet" href="styles/mystyles.css">
+   <script src="scripts/jquery-2.1.1.min.js"></script> 
+    <script src="scripts/jquery.mobile-1.4.2.min.js"></script>
+	<style>
+	
+	</style>
+	
+	<script>
+
+function computeLength(){
+	//alert("hello");
+	var inputValue= document.getElementById('inputValue').value;
+	var lengthFrom = document.getElementById('lengthFrom').value;
+	var lengthTo = document.getElementById('lengthTo').value;
+	var result;
+	switch(lengthFrom){
+	case 'mm': 	
+				switch(lengthTo){
+					case 'mm': result= inputValue; break;
+					case 'cm': result = inputValue/10; break;
+					case 'm' : result = inputValue/1000; break;
+					
+				}//end inner switch
+				break;
+	case 'cm': switch(lengthTo){
+					case 'mm': result= inputValue*10; break;
+					case 'cm': result = inputValue; break;
+					case 'm' : result = inputValue/100; break;
+					
+				}//end inner switch
+				break;
+	case 'm': switch(lengthTo){
+					case 'mm': result= inputValue*1000; break;
+					case 'cm': result = inputValue*100; break;
+					case 'm' : result = inputValue; break;
+					
+				}//end inner switch
+				break;
+	}//End Outer switch
+	
+	//alert(result);
+	//var interest = (amount * (interest_rate * 0.1)) / months;
+	//var payment = ((amount / months) + interest).toFixed(2);
+	//payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('outputValue').value=result;
+	document.getElementById('laro').innerHTML=result;
+	
+	
+	}//End computeLoan
+
+
+</script>
+	
+	
+</head>
+<body>
+
 <div data-role="page" id="calc_length">
    <div data-role="header" data-theme="c" align="center">
      Calculations Page
@@ -20,21 +84,27 @@
   <table>
 	<td>
 	
-	<tr><input type="number" id="lengthValue" min="1" onchange="computeLength()" data-theme="c"></tr>
+	<tr><input type="number" id="inputValue" min="1" onchange="computeLength()" data-theme="c"></tr>
 	</tr>
-	<select>
-		<option value="mm">mm</option>
-		<option value="cm">cm</option>
+	<select id="lengthFrom" onchange="computeLength()">
+		<option  value="mm">mm</option>
+		<option  value="cm">cm</option>
+		<option  value="m">m</option>
+		
 		</select></tr>
 	<tr>
-	<select>
-		<option value="mm">mm</option>
-		<option value="cm">cm</option>
+	<select id="lengthTo"  onchange="computeLength()"> 
+		<option  value="mm">mm</option>
+		<option  value="cm">cm</option>
+		<option  value="m">m</option>
+		
 		</select></tr>
-	<tr><input type="number" id="lengthValue" min="1" onchange="computeLength()" data-theme="c"></tr>
+	<tr><input  id="outputValue"  data-theme="c" readonly="readonly"></tr>
    </div>
    
+   <div id="laro">
    
+   </div>
    
    
    </div> 
@@ -52,3 +122,13 @@
    
    
    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
