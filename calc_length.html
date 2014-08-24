@@ -1,0 +1,35 @@
+<div data-role="page" id="calc_length">
+   <div data-role="header" data-theme="c" align="center">
+     Calculations Page
+   </div>
+   
+   
+   <div data-role="content">
+   <div align="center">
+   <h1 class="heading">Length</h1>
+   <div align="left">
+   <input type="range" min="0" max="100"></input>
+   <p> Loan Amount: $<input id="amount" type="number" min="1" max="10000000"
+   onchange="computeLoan()" data-theme="c"></p>
+   <p> Interest Rate: $<input id="interest_rate" type="number" min="0" max="100" value="10" step=".1"
+   onchange="computeLoan()" data-theme="c"></p>
+   <p> Months: $<input id="months" type="number" min="1" max="72" step="1"
+   onchange="computeLoan()" data-theme="c"></p>
+   <h2 id="payment"></h2>
+   
+   
+   </div> 
+  </div>
+   </div>
+   
+   <div data-position="fixed" data-role="footer" data-theme="c">
+   <div align="center">
+      <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
+ <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
+      <a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
+  <p data-inline="true">(c) OutKa$t</p>
+   </div>
+   </div>
+   
+   
+   </div>

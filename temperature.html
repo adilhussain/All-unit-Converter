@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>All Unit Converter</title>
+		<link rel="stylesheet" href="styles/jquery.mobile-1.4.2.min.css">
+		<link rel="stylesheet" href="themes/UnitConverter.css">
+		<link rel="stylesheet" href="styles/mystyles.css">
+		<script src="scripts/jquery-2.1.1.min.js"></script> 
+		<script src="scripts/jquery.mobile-1.4.2.min.js"></script>
+		<script>
+
+		function computeTemp()
+		{
+			var inputValue= document.getElementById('inputValue').value;
+			var TempFrom = document.getElementById('TempFrom').value;
+			var TempTo = document.getElementById('TempTo').value;
+			var result;
+			switch(TempFrom)
+			{
+				case 'Celcius': 	
+					switch(TempTo)
+					{
+						case 'Celcius': result= inputValue; break;
+						case 'Fahrenheit': result = (inputValue*(9/5))+32; break;
+						case 'Kelvin' : result = inputValue+273; break;
+					}//end inner switch
+					break;
+				case 'Fahrenheit': 
+					switch(TempTo)
+					{
+						case 'Celcius': result= (inputValue-32)*(5/9); break;
+						case 'Fahrenheit': result = inputValue; break;
+						case 'Kelvin' : result = ((inputValue-32)*(5/9))+273.04; break;
+					}//end inner switch
+					break;
+				case 'Kelvin': 
+					switch(TempTo)
+					{
+						case 'Celcius': result= inputValue-273.04; break;
+						case 'Fahrenheit': result = ((inputValue-273.04)*(9/5))+32; break;
+						case 'Kelvin' : result = inputValue; break;
+					}//end inner switch
+					break;
+			}//End Outer switch
+			document.getElementById('outputValue').value=result;
+			document.getElementById('laro').innerHTML=result;
+		}//End computeLoan
+		</script>
+		</head>
+	<body>
+		<div data-role="page" id="calc_Temp">
+		<div data-role="header" data-theme="c" align="center">
+			Calculations Page
+		</div>
+		<div data-role="content">
+		<div align="center">
+			<h1 class="heading">Temp</h1>
+			<div align="left">
+			<div id="TempInput">
+			<table>
+				<td>
+				<tr><input type="number" id="inputValue" min="1" onchange="computeTemp()" data-theme="c"></tr>
+					<select id="TempFrom" onchange="computeTemp()">
+						<option  value="Celcius">Celcius</option>
+						<option  value="Fahrenheit">Fahrenheit</option>
+						<option  value="Kelvin">Kelvin</option>
+					</select>
+				</tr>
+				<tr>
+					<select id="TempTo"  onchange="computeTemp()"> 
+						<option  value="Celcius">Celcius</option>
+						<option  value="Fahrenheit">Fahrenheit</option>
+						<option  value="Kelvin">Kelvin</option>
+					</select>
+				</tr>
+				<tr>
+					<input  id="outputValue"  data-theme="c" readonly="readonly">
+				</tr>
+			</div>
+			</div> 
+		</div>
+		</div>
+		<div data-position="fixed" data-role="footer" data-theme="c">
+		<div align="center">
+			<a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
+			<a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
+			<a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
+			<p data-inline="true">(c) OutKa$t</p>
+		</div>
+		</div>
+   </div>
+	</body>
+</html>
