@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "name": "All Unit Converter",
+  "description": "The App takes a unit of particular quantity and converts it to other equivalent unit",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "OutKa$t",
+    "url": "http://developer.mozilla.org"
+  },
+  "default_locale": "en"
+}

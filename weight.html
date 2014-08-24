@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>All Unit Converter</title>
+ 
+   <link rel="stylesheet" href="styles/jquery.mobile-1.4.2.min.css">
+   <link rel="stylesheet" href="themes/UnitConverter.css"
+   <link rel="stylesheet" href="styles/mystyles.css">
+   <script src="scripts/jquery-2.1.1.min.js"></script> 
+    <script src="scripts/jquery.mobile-1.4.2.min.js"></script>
+	<style>
+	
+	</style>
+	
+	<script>
+
+function computeLength(){
+	//alert("hello");
+	var inputValue= document.getElementById('inputValue').value;
+	var lengthFrom = document.getElementById('lengthFrom').value;
+	var lengthTo = document.getElementById('lengthTo').value;
+	var result;
+	switch(lengthFrom){
+	
+	case 'mg': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue; break;
+					case 'g': result = inputValue*0.001; break;
+					case 'kg' : result = inputValue*0.000001; break;
+					case 'ton' : result = inputValue*(1.0*(10^(-9))); break;
+					case 'ton(uk)' : result = inputValue*(9.8421*(10^(-10))); break;
+					case 'gr' : result = inputValue*0.015432; break;
+					case 'oz' : result = inputValue*0.000035; break;
+					case 'lb' : result = inputValue*0.000002; break;
+					case 'carat' : result = inputValue*0.005; break;
+				}//end inner switch
+				break;
+	case 'g': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*1000; break;
+					case 'g': result = inputValue; break;
+					case 'kg' : result = inputValue*0.001; break;
+					case 'ton' : result = inputValue*0.000001; break;
+					case 'ton(uk)' : result = inputValue/1000; break;
+					case 'gr' : result = inputValue*15.432358; break;
+					case 'oz' : result = inputValue*0.035274; break;
+					case 'lb' : result = inputValue*0.002205; break;
+					case 'carat' : result = inputValue*5; break;
+				}//end inner switch
+				break;
+	case 'kg': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*1000000; break;
+					case 'g': result = inputValue*1000; break;
+					case 'kg' : result = inputValue; break;
+					case 'ton' : result = inputValue/1000; break;
+					case 'ton(uk)' : result = inputValue*0.000984; break;
+					case 'gr' : result = inputValue*15432.3584; break;
+					case 'oz' : result = inputValue*35.273962; break;
+					case 'carat' : result = inputValue*5000; break;
+				}//end inner switch
+				break;
+	case 'ton': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*1000000000; break;
+					case 'g': result = inputValue*1000000; break;
+					case 'kg' : result = inputValue*1000; break;
+					case 'ton' : result = inputValue; break;
+					case 'ton(uk)' : result = inputValue*0.984207; break;
+					case 'gr' : result = inputValue*15432358.4; break;
+					case 'oz' : result = inputValue*35273.9619; break;
+					case 'lb' : result = inputValue*2204.62262; break;
+					case 'carat' : result = inputValue*5000000; break;
+				}//end inner switch
+				break;
+	case 'ton(uk)': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*1016046909; break;
+					case 'g': result = inputValue*1016046.91; break;
+					case 'kg' : result = inputValue*1016.04691; break;
+					case 'ton' : result = inputValue*1.016047; break;
+					case 'ton(uk)' : result = inputValue; break;
+					case 'gr' : result = inputValue*15680000; break;
+					case 'oz' : result = inputValue*35840; break;
+					case 'lb' : result = inputValue*2240; break;
+					case 'carat' : result = inputValue*5080234.54 break;
+				}//end inner switch
+				break;
+	case 'gr': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*64.79891; break;
+					case 'g': result = inputValue*0.064799; break;
+					case 'kg' : result = inputValue*0.000065; break;
+					case 'ton' : result = inputValue/1000; break;
+					case 'ton(uk)' : result = inputValue/1000; break;
+					case 'gr' : result = inputValue; break;
+					case 'oz' : result = inputValue*0.002286; break;
+					case 'lb' : result = inputValue*0.000143; break;
+					case 'carat' : result = inputValue*0.323995; break;
+				}//end inner switch
+				break;
+	case 'oz': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*28349.5231; break;
+					case 'g': result = inputValue*28.349523; break;
+					case 'kg' : result = inputValue*0.02835; break;
+					case 'ton' : result = inputValue*0.000028; break;
+					case 'ton(uk)' : result = inputValue*0.000028; break;
+					case 'gr' : result = inputValue*437.5; break;
+					case 'oz' : result = inputValue; break;
+					case 'lb' : result = inputValue*0.0625; break;
+					case 'carat' : result = inputValue*141.747616; break;
+				}//end inner switch
+				break;
+	case 'lb': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*453592.37; break;
+					case 'g': result = inputValue*453.59237; break;
+					case 'kg' : result = inputValue*0.453592; break;
+					case 'ton' : result = inputValue*0.000454; break;
+					case 'ton(uk)' : result = inputValue*0.000446; break;
+					case 'gr' : result = inputValue*7000; break;
+					case 'oz' : result = inputValue*16; break;
+					case 'lb' : result = inputValue; break;
+					case 'carat' : result = inputValue*2267.96185; break;
+				}//end inner switch
+				break;
+	case 'carat': 	
+				switch(lengthTo){
+					case 'mg': result= inputValue*200; break;
+					case 'g': result = inputValue*0.2; break;
+					case 'kg' : result = inputValue*0.0002; break;
+					case 'ton' : result = inputValue/1000; break;
+					case 'ton(uk)' : result = inputValue/1000; break;
+					case 'gr' : result = inputValue*3.086472; break;
+					case 'oz' : result = inputValue*0.007055; break;
+					case 'lb' : result = inputValue*0.000441; break;
+					case 'carat' : result = inputValue; break;
+				}//end inner switch
+				break;
+
+	}//End Outer switch
+	
+	//alert(result);
+	//var interest = (amount * (interest_rate * 0.1)) / months;
+	//var payment = ((amount / months) + interest).toFixed(2);
+	//payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('outputValue').value=result;
+	document.getElementById('laro').innerHTML=result;
+	
+	
+	}//End computeLoan
+
+
+</script>
+	
+	
+</head>
+<body>
+
+<div data-role="page" id="calc_length">
+   <div data-role="header" data-theme="c" align="center">
+     Calculations Page
+   </div>
+   
+   
+   
+  
+   
+   
+  
+   
+   <div data-role="content">
+   <div align="center">
+   <h1 class="heading">weight</h1>
+   <div align="left">
+  
+   
+    <div id="lengthInput">
+  <table>
+	<td>
+	
+	<tr><input type="number" id="inputValue" min="1" onchange="computeLength()" data-theme="c"></tr>
+	</tr>
+	<select id="lengthFrom" onchange="computeLength()">
+		<option  value="mg">mg</option>
+		<option  value="g">g</option>
+		<option  value="kg">kg</option>
+		<option  value="ton">ton</option>
+		<option  value="ton(uk)">ton(uk)</option>
+        <option  value="gr">gr</option>
+        <option  value="oz">oz</option>	
+        <option  value="lb">lb</option>
+        <option  value="carat">carat</option>	   
+		
+		</select></tr>
+	<tr>
+	<select id="lengthTo"  onchange="computeLength()"> 
+		<option  value="mg">mg</option>
+		<option  value="g">g</option>
+		<option  value="kg">kg</option>
+		<option  value="ton">ton</option>
+		<option  value="ton(uk)">ton(uk)</option>
+        <option  value="gr">gr</option>
+        <option  value="oz">oz</option>	
+        <option  value="lb">lb</option>
+        <option  value="carat">carat</option>
+		
+		</select></tr>
+	<tr><input  id="outputValue"  data-theme="c" readonly="readonly"></tr>
+   </div>
+   
+   <div id="laro">
+   
+   </div>
+   
+   
+   </div> 
+  </div>
+   </div>
+   
+   <div data-position="fixed" data-role="footer" data-theme="c">
+   <div align="center">
+      <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
+ <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
+      <a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
+  <p data-inline="true">(c) OutKa$t</p>
+   </div>
+   </div>
+   
+   
+   </div>
+
+</body>
+</html>
+
+
+
+
+
+
+

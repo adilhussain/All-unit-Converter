@@ -1,0 +1,33 @@
+h1{
+color:blue
+}
+
+header {
+	background-color:lightgrey;
+	width:100%;
+}
+footer{
+	background-color: lightgrey;azimuth;
+	width :100%;
+	position:absolute;
+	bottom: 0;
+	left:0;
+	
+}
+title{
+color:teal
+}
+
+.heading{
+	color:black;
+	text-align:center;
+	font-size: 14pt;
+	padding-top: 5%;
+	}
+.heading:FIRST-LETTER {
+	font-size: 28pt;
+	color: lightgrey;
+}
+#app_name{
+color:white;
+}
