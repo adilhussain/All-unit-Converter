@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>checking </title>
+
+
+<script type="text/javascript" src="listCollapse.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+
+  //choose one of these options
+
+  //option 1 - no auto-child-collapse
+  compactMenu('someID',false,'&plusmn; ');
+
+  //option 2 - auto-child-collapse
+  compactMenu('someID',true,'&plusmn; ');
+
+}
+</script>
+
+
+
+
+
+</head>
+
+<body>
+
+
+<ul id="someID">
+  <li>Book 1
+    <ul>
+      <li><a href="someHref">Chapter 1</a></li>
+      <li><a href="someHref">Chapter 2</a></li>
+      <li><a href="someHref">Chapter 3</a></li>
+      <li><a href="someHref">Chapter 4</a></li>
+    </ul>
+  </li>
+  <li>Book 2
+    <ul>
+      <li><a href="someHref">Chapter 1</a></li>
+      <li><a href="someHref">Chapter 2</a></li>
+      <li>Chapter 3
+        <ul>
+          <li><a href="listCollapseExample.html">Ex 1</a></li>
+          <li><a href="someHref">Ex 2</a></li>
+        </ul>
+      </li>
+      <li><a href="javascript:notA();">Chapter 4</a></li>
+    </ul>
+  </li>
+  <li>Book 3
+    <ul>
+      <li><a href="someHref">Chapter 1</a></li>
+      <li><a href="someHref">Chapter 2</a></li>
+      <li><a href="someHref">Chapter 3</a></li>
+      <li><a href="someHref">Chapter 4</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+</body>
+</html>
+
+

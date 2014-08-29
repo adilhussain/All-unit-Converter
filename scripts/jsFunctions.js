@@ -1,20 +1,91 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <title>All Unit Converter</title>
- 
-   <link rel="stylesheet" href="styles/jquery.mobile-1.4.2.min.css">
-   <link rel="stylesheet" href="themes/UnitConverter.css"
-   <link rel="stylesheet" href="styles/mystyles.css">
-   <script src="scripts/jquery-2.1.1.min.js"></script> 
-    <script src="scripts/jquery.mobile-1.4.2.min.js"></script>
-	<style>
-	
-	</style>
-	
-	<script>
 
-function computeweight(){
+
+		function computeVolume()
+		{
+			var inputValue= document.getElementById('inputValue').value;
+			var VolumeFrom = document.getElementById('VolumeFrom').value;
+			var VolumeTo = document.getElementById('VolumeTo').value;
+			var result;
+			switch(VolumeFrom)
+			{
+				case 'Litre': 	
+					switch(VolumeTo)
+					{
+						case 'Litre': result= inputValue; break;
+						case 'Gallon': result = inputValue/10; break;
+						case 'Drop' : result = inputValue/1000; break;
+					}//end inner switch
+					break;
+				case 'Gallon': 
+					switch(VolumeTo)
+					{
+						case 'Litre': result= inputValue*10; break;
+						case 'Gallon': result = inputValue; break;
+						case 'Drop' : result = inputValue/100; break;
+					}//end inner switch
+					break;
+				case 'Drop': 
+					switch(VolumeTo)
+					{
+						case 'Litre': result= inputValue*1000; break;
+						case 'Gallon': result = inputValue*100; break;
+						case 'Drop' : result = inputValue; break;
+					}//end inner switch
+					break;
+			}//End Outer switch
+			document.getElementById('outputValue').value=result;
+			
+		}//End computeLoan
+		
+	
+	
+	
+	
+
+function computeLength(){
+	alert("hello");
+	var inputValue= document.getElementById('inputValue').value;
+	var lengthFrom = document.getElementById('lengthFrom').value;
+	var lengthTo = document.getElementById('lengthTo').value;
+	var result;
+	switch(lengthFrom){
+	case 'mm': 	
+				switch(lengthTo){
+					case 'mm': result= inputValue; break;
+					case 'cm': result = inputValue/10; break;
+					case 'm' : result = inputValue/1000; break;
+					
+				}//end inner switch
+				break;
+	case 'cm': switch(lengthTo){
+					case 'mm': result= inputValue*10; break;
+					case 'cm': result = inputValue; break;
+					case 'm' : result = inputValue/100; break;
+					
+				}//end inner switch
+				break;
+	case 'm': switch(lengthTo){
+					case 'mm': result= inputValue*1000; break;
+					case 'cm': result = inputValue*100; break;
+					case 'm' : result = inputValue; break;
+					
+				}//end inner switch
+				break;
+	}//End Outer switch
+	
+	//alert(result);
+	//var interest = (amount * (interest_rate * 0.1)) / months;
+	//var payment = ((amount / months) + interest).toFixed(2);
+	//payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	alert(result);
+	document.getElementById('outputValue').value=result;
+	document.getElementById('result').innerHTML=result;
+	
+	}//End computeLoan
+
+
+	
+	function computeweight(){
 	//alert("hello");
 	var inputValue= document.getElementById('inputValue').value;
 	var weightFrom = document.getElementById('weightFrom').value;
@@ -150,93 +221,16 @@ function computeweight(){
 	
 	
 	}//End computeLoan
+	
 
-
-</script>
 	
 	
-</head>
-<body>
-
-<div data-role="page" id="calc_length">
-   <div data-role="header" data-theme="c" align="center">
-     Calculations Page
-   </div>
-   
-   
-   
-  
-   
-   
-  
-   
-   <div data-role="content">
-   <div align="center">
-   <h1 class="heading">weight</h1>
-   <div align="left">
-  
-   
-    <div id="lengthInput">
-  <table>
-	<td>
 	
-	<tr><input type="number" id="inputValue" min="1" onchange="computeweight()" data-theme="c"></tr>
-	</tr>
-	<select id="weightFrom" onchange="computeweight()">
-		<option  value="mg">mg</option>
-		<option  value="g">g</option>
-		<option  value="kg">kg</option>
-		<option  value="ton">ton</option>
-		<option  value="ton(uk)">ton(uk)</option>
-        <option  value="gr">gr</option>
-        <option  value="oz">oz</option>	
-        <option  value="lb">lb</option>
-        <option  value="carat">carat</option>	   
-		
-		</select></tr>
-	<tr>
-	<select id="weightTo"  onchange="computeweight()"> 
-		<option  value="mg">mg</option>
-		<option  value="g">g</option>
-		<option  value="kg">kg</option>
-		<option  value="ton">ton</option>
-		<option  value="ton(uk)">ton(uk)</option>
-        <option  value="gr">gr</option>
-        <option  value="oz">oz</option>	
-        <option  value="lb">lb</option>
-        <option  value="carat">carat</option>
-		
-		</select></tr>
-	<tr><input  id="outputValue"  data-theme="c" readonly="readonly"></tr>
-   </div>
-   
-   <div id="laro">
-   
-   </div>
-   
-   
-   </div> 
-  </div>
-   </div>
-   
-   <div data-position="fixed" data-role="footer" data-theme="c">
-   <div align="center">
-      <a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
- <a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
-      <a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-  <p data-inline="true">(c) OutKa$t</p>
-   </div>
-   </div>
-   
-   
-   </div>
-
-</body>
-</html>
+	
+	
+ 
 
 
-
-
-
-
-
+	
+	
+	
