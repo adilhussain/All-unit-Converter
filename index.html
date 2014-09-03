@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>All Unit Converter</title>
+		<title>Daily Unit Converter</title>
 		<script src="scripts/jsFunctions.js"></script>
 		<link rel="stylesheet" href="styles/jquery.mobile-1.4.2.min.css">
 		<link rel="stylesheet" href="themes/UnitConverter.css">
@@ -11,121 +11,286 @@
 		<link rel="stylesheet" href="themes/unitConverter.css">
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css">
 		<script>
-		var globalId;
-		function computeLength(){
-	alert("hello");
-	var inputValue= document.getElementById('inputValue').value;
-	var lengthFrom = document.getElementById('lengthFrom').value;
-	var lengthTo = document.getElementById('lengthTo').value;
-	var result;
-	switch(lengthFrom){
-	case 'mm': 	
-				switch(lengthTo){
-					case 'mm': result= inputValue; break;
-					case 'cm': result = inputValue/10; break;
-					case 'm' : result = inputValue/1000; break;
-					
-				}//end inner switch
-				break;
-	case 'cm': switch(lengthTo){
-					case 'mm': result= inputValue*10; break;
-					case 'cm': result = inputValue; break;
-					case 'm' : result = inputValue/100; break;
-					
-				}//end inner switch
-				break;
-	case 'm': switch(lengthTo){
-					case 'mm': result= inputValue*1000; break;
-					case 'cm': result = inputValue*100; break;
-					case 'm' : result = inputValue; break;
-					
-				}//end inner switch
-				break;
-	}//End Outer switch
-	
-	//alert(result);
-	//var interest = (amount * (interest_rate * 0.1)) / months;
-	//var payment = ((amount / months) + interest).toFixed(2);
-	//payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	alert(result);
-	document.getElementById('outputValue').value=result;
-	document.getElementById('result').innerHTML=result;
-	
-	}//End computeLength
-
 		
-		function openTest1(param) {
-  <!-- alert('\'#' + param + '\''); -->
-  if(globalId)
-   document.getElementById(globalId).style.display= "none";
-   globalId=param;
-   
-	document.getElementById(param).style.display= "block";
-	 
-	}//End openEditMenu
 		
 		</script>
 		
+		<script type="text/javascript">
+		
+		
+		var globalId;
+		function openTest1(param) 
+		{  	alert("hoye");
+			if(globalId)
+			document.getElementById(globalId).style.display= "none";
+			globalId=param;   
+			document.getElementById(param).style.display= "block";	 
+		}//End openTest1
+		
+		
+		
+		function computeLength()
+		{
+			var inputValue= document.getElementById('inputValue').value;
+			var lengthFrom = document.getElementById('lengthFrom').value;
+			var lengthTo = document.getElementById('lengthTo').value;
+				//alert("InputValue= "+inputValue+" "+lengthFrom+" "+lengthTo);
+			var result;
+			switch(lengthFrom)
+			{
+				case 'mm': 	
+					switch(lengthTo)
+					{
+						case 'mm': result= inputValue; break;
+						case 'cm': result = inputValue/10; break;
+						case 'm' : result = inputValue/1000; break;
+					}//end inner switch
+					break;
+				case 'cm': 
+					switch(lengthTo)
+					{
+						case 'mm': result= inputValue*10; break;
+						case 'cm': result = inputValue; break;
+						case 'm' : result = inputValue/100; break;
+					}//end inner switch
+					break;
+				case 'm': 
+					switch(lengthTo)
+					{
+						case 'mm': result= inputValue*1000; break;
+						case 'cm': result = inputValue*100; break;
+						case 'm' : result = inputValue; break;	
+					}//end inner switch
+					break;
+			}//End Outer switch
+			document.getElementById('outputValue').value=result;
+			document.getElementById('result').innerHTML=result;
+		}//End computeLength
+		
+		
+		
+		function computeVolume()
+		{
+			var inputValue= document.getElementById('inputValueVolume').value;
+			var VolumeFrom = document.getElementById('VolumeFrom').value;
+			var VolumeTo = document.getElementById('VolumeTo').value;
+			var result;
+			switch(VolumeFrom)
+			{
+				case 'Litre': 	
+					switch(VolumeTo)
+					{
+						case 'Litre': result= inputValue; break;
+						case 'Gallon': result = inputValue/10; break;
+						case 'Drop' : result = inputValue/1000; break;
+					}//end inner switch
+					break;
+				case 'Gallon': 
+					switch(VolumeTo)
+					{
+						case 'Litre': result= inputValue*10; break;
+						case 'Gallon': result = inputValue; break;
+						case 'Drop' : result = inputValue/100; break;
+					}//end inner switch
+					break;
+				case 'Drop': 
+					switch(VoluDropeTo)
+					{
+						case 'Litre': result= inputValue*1000; break;
+						case 'Gallon': result = inputValue*100; break;
+						case 'Drop' : result = inputValue; break;
+					}//end inner switch
+					break;
+			}//End Outer switch
+			document.getElementById('outputValueVolume').value=result;
+			document.getElementById('laro').innerHTML=result;
+		}//End computeVolume
+		
+		
+		
+		function computeWeight()
+		{   alert("weight");
+			var inputValue= document.getElementById('inputValueWeight').value;
+			alert(inputValue);
+			var WeightFrom = document.getElementById('weightFrom').value;
+			alert(WeightFrom);
+			var WeightTo = document.getElementById('weightTo').value;
+				alert(WeightTo);
+				//alert("InputValue= "+inputValue+" "+lengthFrom+" "+lengthTo);
+			var result;
+			
+			
+			switch(WeightFrom)
+			{
+				case 'mg': 	
+					switch(WeightTo)
+					{
+					case 'mg': result= inputValue; break;
+					case 'g': result = inputValue*0.001; break;
+					case 'kg' : result = inputValue*0.000001; break;
+					}
+					break;
+				case 'g':
+					switch(WeightTo)
+					{
+					case 'mg': result= inputValue*1000; break;
+					case 'g': result = inputValue; break;
+					case 'kg' : result = inputValue*0.001; break;
+					}
+					break;
+				case 'kg': 	
+				switch(weightTo)
+					{
+					case 'mg': result= inputValue*10000; break;
+					case 'g': result = inputValue*1000; break;
+					case 'kg' : result = inputValue; break;
+					}
+					break;
+				
+			} //End outer switch
+			alert(result);
+			document.getElementById('outputValueWeight').value=result;
+			alert(result);
+		}//EndComputeWeight
+		
+		
+		
+		
+		
+		//{
+	//		alert("Fuck u bitch");
+		//}
+		
+		</script>	
 	</head>
 	<body>
 		<div data-role="page" id="homePage">
-		<div data-role="header" data-theme="c">
-			<a href="index.html" data-icon="back">back</a>
-			<h1 id="app_name">All Unit Converter</h1>
-			<a href="#optionsPanel1" data-icon="gear" class="ui-btn-right">Options</a>
-			<div data-role="panel"  data-theme"b" id="optionsPanel1" data-position="right" data-display="overlay">
-			</div>	
-			
-			
-			
-			
-			
-			
-			<a href="#" onclick="openTest1('length')" data-role="button"
-                        data-icon="gear"  >Length</a>
-						<a href="#" onclick="openTest1('test2')" data-role="button"
-                        data-icon="gear"  >Weigth</a>
-						<a href="#" onclick="openTest1('test1')" data-role="button"
+			<div data-role="header" data-theme="c">
+				<a href="index.html" data-icon="back">back</a>
+				<h1 id="app_name">All Unit Converter</h1>
+				<a href="#optionsPanel1" data-icon="gear" class="ui-btn-right">Options</a>
+				<div data-role="panel"  data-theme"b" id="optionsPanel1" data-position="right" data-display="overlay"> </div>	
+				<a href="" onclick="openTest1('length')" data-role="button"
+					data-icon="gear"  >Length</a>
+				<a href="#" onclick="openTest1('weight')" data-role="button"
+                   data-icon="gear"  >Weight</a>
+			    <a href="#" onclick="openTest1('volume')" data-role="button"
                         data-icon="gear"  >Volume</a>
-						<a href="#" onclick="openTest1('test2')" data-role="button"
-                        data-icon="gear"  >Temperature</a>
-			
+				<a href="#" onclick="openTest1('temperature')" data-role="button"
+                       data-icon="gear"  >Temperature</a>			
 			</div>
-			
-			
-			<div id="test1" style="display:none">hello world</div>
-
-			<div id="test2" style="display:none">hello dk</div>
-			
-			 <div  id="length" style="display:none">
+		<div id="test1" style="display:none">hello world</div>
 		
-   <table>
-					<td>
-						<tr><input type="number" id="inputValue" min="1" onchange="computeLength()" data-theme="c"></tr>
-						</tr>
-						<select id="lengthFrom" onchange="computeLength()">
-							<option  value="mm">mm</option>
-							<option  value="cm">cm</option>
-							<option  value="m">m</option>
-						</select></tr>
-						<tr>
-						<select id="lengthTo"  onchange="computeLength()"> 
-							<option  value="mm">mm</option>
-							<option  value="cm">cm</option>
-							<option  value="m">m</option>
-						</select></tr>
-						<tr><input  id="outputValue"  data-theme="c" readonly="readonly"></tr>
-						<tr>
-					</table>
-					<button class="ui-btn" onclick="computeLength()">Button</button>
-					<div data-role="button" onclick="computeLength()">compute</div>
-					<div id="result"></div>
-	</div>
-			
-			
-			
-			
-			
+		<!-- **************************************  LengthId **********************************************-->
+		<div  id="length" style="display:none">
+		<table>
+		<tr>
+			<input type="number" id="inputValue" min="1" onchange="computeLength()" data-theme="c"></tr>
+				<tr><select id="lengthFrom" onchange="computeLength()">
+					<option  value="mm">mm</option>
+					<option  value="cm">cm</option>
+					<option  value="m">m</option>
+			</select></tr>
+			<tr>
+				<select id="lengthTo"  onchange="computeLength()"> 
+					<option  value="mm">mm</option>
+					<option  value="cm">cm</option>
+					<option  value="m">m</option>
+				</select></tr>
+			<tr>
+				<input  id="outputValue"  data-theme="c" readonly="readonly">
+			</tr>
+		
+		</table>
+		</div>
+		<!--**************************************  LengthId Closed********************************************-->
+		
+		<!-- *************************************  Weight Id **********************************************-->
+		<div id="weight" style="display:none">
+			<table>
+		<td>
+			<tr><input type="number" id="inputValueWeight" min="1" onchange="computeWeight()" data-theme="c"></tr>
+				<tr><select id="weightFrom" onchange="computeWeight()">
+									<option  value="mg">mg</option>
+									<option  value="g">g</option>
+									<option  value="kg">kg</option>
+									<option  value="ton">ton</option>
+									<option  value="ton(uk)">ton(uk)</option>
+									<option  value="gr">gr</option>
+									<option  value="oz">oz</option>	
+									<option  value="lb">lb</option>
+									<option  value="carat">carat</option>	   
+								</select></tr>
+			<tr>
+				<select id="weightTo" onchange="computeWeight()">
+									<option  value="mg">mg</option>
+									<option  value="g">g</option>
+									<option  value="kg">kg</option>
+									<option  value="ton">ton</option>
+									<option  value="ton(uk)">ton(uk)</option>
+									<option  value="gr">gr</option>
+									<option  value="oz">oz</option>	
+									<option  value="lb">lb</option>
+									<option  value="carat">carat</option>	   
+								</select></tr>
+			<tr>
+				<input  id="outputValueWeight"  data-theme="c" readonly="readonly">
+			</tr>
+		<td>
+		</table>
+		</div>	
+		<!-- ************************************** weight Id Closed ****************************************-->
+		
+		<!-- *************************************  volume Id **********************************************-->
+		<div id="volume" style="display:none">
+			<table>
+		<td>
+			<tr><input type="number" id="inputValueVolume" min="1" onchange="computeVolume()" data-theme="c"></tr>
+				<tr><select id="VolumeFrom" onchange="computeVolume()">
+									<option  value="Litre">Litre</option>
+									<option  value="Gallon">Gallon</option>
+									<option  value="Drop">Drop</option>
+								</select>
+			</tr>
+			<tr>
+				<select id="VolumeTo" onchange="computeVolume()">
+									<option  value="Litre">Litre</option>
+									<option  value="Gallon">Gallon</option>
+									<option  value="Drop">Drop</option>
+				</select>
+			</tr>
+			<tr>
+				<input  id="outputValueVolume"  data-theme="c" readonly="readonly">
+			</tr>
+		</td>
+		</table>
+		</div>	
+		<!-- ************************************** volume Id Closed ****************************************-->
+		
+		<!-- *************************************  temperature Id **********************************************-->
+		<div id="temperature" style="display:none">
+			<table>
+		<td>
+			<tr><input type="number" id="inputValue" min="1" onchange="computeLength()" data-theme="c"></tr>
+				<select id="tempFrom" onchange="computeTemp()">
+					<option  value="mm">Celcius</option>
+					<option  value="cm">Kelvin</option>
+					<option  value="m">Fahrenheit</option>
+			</select></tr>
+			<tr>
+				<select id="tempTo"  onchange="computeTemp()"> 
+					<option  value="mm">Celcius</option>
+					<option  value="cm">Kelvin</option>
+					<option  value="m">Fahrenheit</option>
+				</select></tr>
+			<tr>
+				<input  id="outputValue"  data-theme="c" readonly="readonly">
+			</tr>
+		<td>
+		</table>
+		</div>	
+		<!-- ************************************** temperature Id Closed ****************************************-->
+		
 		</div><!-- header finish -->
 		<div data-role="content" ><!-- content started -->
 		
@@ -139,105 +304,5 @@
 			</div>
 		</div>
    </div>
-   <!-- *******************************lengthPage****************************************************************-->
-   <div id="lengthh" style="display:none">hellllll</div>
-  
-   <!-- ***************************End lengthPage*****************************************************************-->
-   <!-- *******************************volumePage****************************************************************-->
-   <div data-role="page" id="volume">
-		<div data-role="header" data-theme="c">
-			Calculations Page
-		</div>
-		<div data-role="content">
-			<div align="center">
-				<h1 class="heading">Volume</h1>
-					<div align="left">
-						<div id="VolumeInput">
-							<table>
-							<td>
-							<tr><input type="number" id="inputValue" min="1" onchange="computeVolume()" data-theme="c"></tr>
-								<select id="VolumeFrom" onchange="computeVolume()">
-									<option  value="Litre">Litre</option>
-									<option  value="Gallon">Gallon</option>
-									<option  value="Drop">Drop</option>
-								</select>
-							</tr>
-							<tr>
-								<select id="VolumeTo"  onchange="computeVolume()"> 
-									<option  value="Litre">Litre</option>
-									<option  value="Gallon">Gallon</option>
-									<option  value="Drop">Drop</option>
-								</select>
-							</tr>
-							<tr>
-								<input  id="outputValue"  data-theme="c" readonly="readonly">
-							</tr>
-						</div>
-					</div> 
-				</div>
-			</div>
-			<div data-position="fixed" data-role="footer" data-theme="c">
-				<div align="center">
-					<a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
-					<a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
-					<a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-					<p data-inline="true">(c) OutKa$t</p>
-				</div>
-			</div>
-		</div>
-   </div>
-   <!-- ***************************End volumePage*****************************************************************-->
-    <!-- ***************************WeightPage*****************************************************************-->
-   <div data-role="page" id="weight">
-		<div data-role="header" data-theme="c" align="center">
-			Calculations Page
-		</div>
-		<div data-role="content">
-			<div align="center">
-				<h1 class="heading">weight</h1>
-				<div align="left">
-					<div id="WeightInput">
-						<table>
-							<td>
-								<tr><input type="number" id="inputValue" min="1" onchange="computeweight()" data-theme="c"></tr>
-								</tr>
-								<select id="weightFrom" onchange="computeweight()">
-									<option  value="mg">mg</option>
-									<option  value="g">g</option>
-									<option  value="kg">kg</option>
-									<option  value="ton">ton</option>
-									<option  value="ton(uk)">ton(uk)</option>
-									<option  value="gr">gr</option>
-									<option  value="oz">oz</option>	
-									<option  value="lb">lb</option>
-									<option  value="carat">carat</option>	   
-								</select></tr>
-								<tr>
-								<select id="weightTo"  onchange="computeweight()"> 
-									<option  value="mg">mg</option>
-									<option  value="g">g</option>
-									<option  value="kg">kg</option>
-									<option  value="ton">ton</option>
-									<option  value="ton(uk)">ton(uk)</option>
-									<option  value="gr">gr</option>
-									<option  value="oz">oz</option>	
-									<option  value="lb">lb</option>
-									<option  value="carat">carat</option>
-								</select></tr>
-								<tr><input  id="outputValue"  data-theme="c" readonly="readonly"></tr>
-							</div>
-						</div> 
-					</div>
-				</div>
-				<div data-position="fixed" data-role="footer" data-theme="c">
-					<div align="center">
-						<a href="#homePage" data-inline="true" data-icon="arrow-l" data-iconpos="notext" data-role="button" >testlink</a>
-						<a href="#homePage" data-transition="flip" data-inline="true" data-icon="home" data-iconpos="notext" data-role="button" >testlink</a>
-						<a href="#page2" data-inline="true" data-icon="arrow-r" data-iconpos="notext" data-role="button" >testlink</a>
-						<p data-inline="true">(c) OutKa$t</p>
-					</div>
-				</div>
-			</div>
-   <!-- ***************************End WeightPage*****************************************************************-->
    </body>
 </html> 
